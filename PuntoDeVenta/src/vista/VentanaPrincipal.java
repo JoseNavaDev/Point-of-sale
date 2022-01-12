@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 public class VentanaPrincipal extends JFrame{
     
     PanelIzquierdo panelIzquierdo;
-    PanelDerecho panelDerecho;      
+    PanelDerecho panelDerecho;
     
     public VentanaPrincipal(PanelIzquierdo panelIzquierdo, PanelDerecho panelDerecho){
         this.panelIzquierdo = panelIzquierdo;
@@ -16,7 +16,7 @@ public class VentanaPrincipal extends JFrame{
     }
 
     private void configuracion() { 
-        this.setUndecorated(true);
+        //this.setUndecorated(true);
         this.setSize(1200,800);        
         this.setLocationRelativeTo(null);
         this.setLayout(null);
@@ -25,8 +25,7 @@ public class VentanaPrincipal extends JFrame{
     
     private void agregarComponentes(){
         this.getContentPane().add(panelIzquierdo.Panel_Izquierdo);
-        this.getContentPane().add(panelDerecho.Panel_Derecho);
-        
+        this.getContentPane().add(panelDerecho.Panel_Derecho);        
     }
     
     

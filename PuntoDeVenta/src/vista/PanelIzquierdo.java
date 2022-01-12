@@ -1,6 +1,9 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -13,6 +16,8 @@ public class PanelIzquierdo {
     JTextArea AreaInfo;
     JTextField TF_Busqueda;
     JButton Btn_Busqueda;
+    
+    Font fuente = new Font("Arial", Font.ITALIC, 20);
     
     public PanelIzquierdo(){
         configuracion();
@@ -33,6 +38,15 @@ public class PanelIzquierdo {
     
     private void areaInformacion(){
         AreaInfo = new JTextArea();
+        AreaInfo.setEditable(false);
+        AreaInfo.setLineWrap(true);
+        AreaInfo.setFont(fuente);
+        AreaInfo.append("************* Abarrotes Gutierrez *************");
+        AreaInfo.append("************ " + fechaYhora() + " *************");
+        AreaInfo.append("---------------------------------------------------------");
+        AreaInfo.append("\n \n \n");
+        AreaInfo.append("Cantilever");
+        AreaInfo.setCaretPosition(AreaInfo.getDocument().getLength());
         AreaInfo.setSize(400,600);
         AreaInfo.setLocation(25,25);
         AreaInfo.setVisible(true);
@@ -55,4 +69,11 @@ public class PanelIzquierdo {
         Panel_Izquierdo.add(Btn_Busqueda);
         Panel_Izquierdo.updateUI();
     }
+    
+    private String fechaYhora(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");     
+        return dtf.format(LocalDateTime.now());
+    }
+    
+    
 }

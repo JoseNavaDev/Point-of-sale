@@ -42,8 +42,6 @@ public class PanelDerecho {
     public PanelDerecho(){
         configuracion();
         botones();
-        //botonesPrimeraLinea();
-        //botonesSegundaLinea();
     }
     
     private void configuracion(){
