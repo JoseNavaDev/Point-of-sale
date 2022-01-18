@@ -8,10 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 public class PanelIzquierdo {
     
     public JPanel Panel_Izquierdo;
+    public JButton Btn_Configuracion;    
     
     JTextArea AreaInfo;
     JTextField TF_Busqueda;
@@ -29,9 +31,9 @@ public class PanelIzquierdo {
     private void configuracion(){
         Panel_Izquierdo = new JPanel();
         Panel_Izquierdo.setLayout(null);
-        Panel_Izquierdo.setSize(450,750);
-        Panel_Izquierdo.setLocation(0,50);
-        Panel_Izquierdo.setBackground(Color.red);
+        Panel_Izquierdo.setSize(450,700);
+        Panel_Izquierdo.setLocation(10,50);
+        Panel_Izquierdo.setBackground(Color.white);
     }
     
     //COMPONENTES
@@ -49,6 +51,7 @@ public class PanelIzquierdo {
         AreaInfo.setCaretPosition(AreaInfo.getDocument().getLength());
         AreaInfo.setSize(400,600);
         AreaInfo.setLocation(25,25);
+        AreaInfo.setBorder(new LineBorder(Color.black));
         AreaInfo.setVisible(true);
         Panel_Izquierdo.add(AreaInfo);
         Panel_Izquierdo.updateUI();
@@ -73,7 +76,6 @@ public class PanelIzquierdo {
     private String fechaYhora(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");     
         return dtf.format(LocalDateTime.now());
-    }
-    
-    
+    }    
+       
 }
